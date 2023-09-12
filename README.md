@@ -13,3 +13,4 @@ S.E. Seemann, J. Gorodkin, R. Backofen. **"Unifying evolutionary and thermodynam
 ## How to use the container
 
 TODO
+singularity build petfold-2.2.simg Singularity
