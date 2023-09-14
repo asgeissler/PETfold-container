@@ -2,9 +2,6 @@ Bootstrap: docker
 From: debian:bookworm
 
 
-%files
-    PETfold2.2.tar.gz
-
 %post
     apt-get update -y
 
@@ -23,7 +20,7 @@ From: debian:bookworm
     rm ViennaRNA-2.6.3.tar.gz
     rm -rf ViennaRNA-2.6.3
 
-    # wget https://rth.dk/resources/petfold/download/PETfold2.2.tar.gz
+    wget https://rth.dk/resources/petfold/download/PETfold2.2.tar.gz
     tar -xf PETfold2.2.tar.gz
     cd PETfold/src
     make
