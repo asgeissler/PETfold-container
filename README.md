@@ -17,19 +17,19 @@ We confirm that the container of this repository works with singularity with the
 
 1. Download the container
 
-    > singularity pull oras://ghcr.io/asgeissler/petfold:2.2
+        > singularity pull oras://ghcr.io/asgeissler/petfold:2.2
 
 2. Run the tool within the container, for example for PETfold:
 
-    > ls
-    input-alignment.fna
-    > singularity exec                                        \
-        `# bind current directory to be visible by container` \
-         -B $PWD:$PWD  petfold_2.2.sif                        \
-        `# run tool from the container, eg PETfold`           \
-        PETfold --fasta input-alignment.fna > output.txt
-    > ls
-    input-alignment.fna         output.txt
+        > ls
+        input-alignment.fna
+        > singularity exec                                        \
+            `# bind current directory to be visible by container` \
+             -B $PWD:$PWD  petfold_2.2.sif                        \
+            `# run tool from the container, eg PETfold`           \
+            PETfold --fasta input-alignment.fna > output.txt
+        > ls
+        input-alignment.fna         output.txt
 
 Note, thank to the  Open Container Initiative (OCI) and it's ORAS tool, this container should be able to be used by any supporting container infrastrucutre, which also includes Docker.
 
@@ -37,11 +37,11 @@ Note, thank to the  Open Container Initiative (OCI) and it's ORAS tool, this con
 
 The container was build with the command:
 
-    > singularity build petfold-2.2.simg Singularity
+        > singularity build petfold-2.2.simg Singularity
 
 The now build container can be published to GitHub's container repository with:
 
-    # Set up login credential for authentification
-    > singularity remote login --username <user> oras://ghcr.io
-    # Enter secret Personal Access Token (PAT)
-    > singularity push petfold-2.2.simg oras://ghcr.io/<user>/petfold:2.2
+        # Set up login credential for authentification
+        > singularity remote login --username <user> oras://ghcr.io
+        # Enter secret Personal Access Token (PAT)
+        > singularity push petfold-2.2.simg oras://ghcr.io/<user>/petfold:2.2
